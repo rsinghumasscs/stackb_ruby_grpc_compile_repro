@@ -7,3 +7,9 @@ http_archive(
     strip_prefix = "rules_proto-78d64b7317a332ee884ad7fcd0506d78f2a402cb",
     urls = ["https://github.com/stackb/rules_proto/archive/78d64b7317a332ee884ad7fcd0506d78f2a402cb.tar.gz"],
 )
+
+load("@build_stack_rules_proto//ruby:deps.bzl", "ruby_grpc_compile", "ruby_grpc_library")
+
+ruby_grpc_compile()
+
+ruby_grpc_library()
