@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+
+import "google/protobuf/timestamp.proto";
+
+message GoodTimes {
+  repeated google.protobuf.Timestamp good_time = 1;
+}
+
+message TimeRange {
+  repeated google.protobuf.Timestamp start_time = 1;
+  repeated google.protobuf.Timestamp end_time = 2;
+}
+
+service GoodTimesService {
+  rpc getGoodTimes (TimeRange) returns (GoodTimes);
+}
